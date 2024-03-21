@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listing Editor</title>
+<style>
+  /* Styles for center alignment */
+  .center-align {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<!-- Listing Editor Toolbar -->
+<div class="toolbar">
+  <button id="underline-btn">Underline</button>
+  <button id="upload-image-btn">Upload Image</button>
+  <button id="embed-link-btn">Embed Link</button>
+</div>
+
+<!-- Image Upload Input (hidden by default) -->
+<input type="file" id="image-upload-input" accept="image/jpeg, image/png" style="display: none;">
+
+<!-- Listing Description Area -->
+<div class="listing-description center-align" id="listing-description">
+  <!-- Listing description content goes here -->
+</div>
+
+<script>
+  // Event listener for Upload Image button
+  document.getElementById('upload-image-btn').addEventListener('click', function() {
+    document.getElementById('image-upload-input').click(); // Trigger click on hidden file input
+  });
+
+  // Event listener for image upload input change
+  document.getElementById('image-upload-input').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+      // Perform image compression (simulated by logging in this example)
+      console.log('Image compressed:', file);
+      
+      // Display uploaded image in the listing description (simulated by logging in this example)
+      console.log('Image added to listing description:', file);
+    }
+  });
+</script>
+</body>
+</html>
